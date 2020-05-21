@@ -17,7 +17,7 @@
 % 	      长标题 \title{{第一行}{第二行}}
 %             超长标题\tiitle{{第一行}{...}{第N行}}
 
-\title{{中国分析哲学研究}}
+\title{{《数据结构》课程的学习报告}}
 
 
 
@@ -26,13 +26,13 @@
 % 	      长标题 \entitle{{First row}{ Second row}}
 %             超长标题\entitle{{First row}{...}{ Next N row}}
 % 注意：  英文标题多行时 需要在开头加个空格 防止摘要标题处英语单词粘连。
-\entitle{{Studies in Analytic Philosophy in China}}
+\entitle{{Study Report of Data Structres}}
 
-\author{yuhldr}
-\major{理论物理}
-\advisor{兰朵儿}
-\college{物理科学与技术学院}
-\grade{2016级}
+\author{谭源}
+\major{计算机类}
+\advisor{蒙应杰}
+\college{信息科学与工程学院}
+\grade{2019级}
 
 
 
@@ -50,7 +50,7 @@
 
 
 %中文摘要
-\ZhAbstract{注意，2020要求英文摘要在前面；这是真的在打广告啊，嗯，做兰大毕业论文latex模板时，顺便介绍一下我写的软件。嗯，好像本科生也不用打广告啦，目前两万多人在用，但是研究生没几个人在用啊，很多在写论文的你们马上就是兰州大学的研究生了吧，试一下i兰大易班？
+\ZhAbstract{在计算机科学中，数据结构是计算机中存储、组织数据的方式。这学期蒙老师先由数据结构的定义开始讲起，依次讲解了算法、线性表、栈和队列、串、数组和广义表、树形结构、图结构、排序、数据检索这几部分内容
 
 不要仅仅把它当做广告，这里面有很多latex的用法说明}{兰朵儿，i兰大易班，yuh}
 
@@ -68,7 +68,7 @@ dialogue in philosophy.
 %文章主体
 \mainmatter
 
-\chapter{绪论}
+\chapter{数据结构绪论}
 
 其实我推荐绪论写在正文里！！作为第一章
 
@@ -78,9 +78,679 @@ dialogue in philosophy.
 
     注意啊，段落在latex里面是要空一行的，不要简单一个回车
 
-    \section{二级标题}
-    绪论其实也可以有二级标题，要不然，论文要求：“包括毕业论文（设计）的研究目的、意义、范围、研究设想、方法、实验设计、选题依据等；还包括毕业论文（设计）研究领域的历史回顾，文献追溯，理论分析等内容”全部写成一堆不成？
+    \section{数据结构的基本概念及研究内容}
 
+	数据元素：具有完整确定意义的描述现实的某一个客观实体的一个最小数据集。数据元素类似原子，可以再分，每一项被称作数据项
+
+	数据对象：具有相同属性的数据元素的集合
+
+	数据结构：给定数据对象及其上面定义的操作所共同构成的一个系统 一个信息处理模型
+
+	主要研究的三个方面：
+\begin{enumerate}
+	\item 数据的逻辑结构
+		\begin{itemize}
+		\item  逻辑关系
+	
+					在自然形态下，数据元素之间的一种关系
+	
+		\item  逻辑结构
+	
+					数据之间所有关系的一个集合
+				数学表示：B=(K,R)，其中：
+				K：数据上的有穷集合
+				R：K上关系的有穷集合，其中每个关系r都是从K到K的关系
+	
+		\item  分类
+	
+			\begin{itemize}
+				\item  线性
+						
+							一对一，单对单
+		
+				\item  非线性
+				\begin{itemize}
+					\item  树形结构
+		
+								唯一一个直接前驱，多个直接后继
+		
+					\item  图结构
+				\end{itemize}
+			\end{itemize}
+		\end{itemize}
+
+	\item 数据的存储结构
+			\begin{itemize}
+				\item  存储关系
+	
+							存储关系的数学内涵：须要建立数据对象(K)到存储区域(M)的映射关系(S):
+
+							S:K→M
+
+							即∀ k∈K,都有唯一的Z∈M ,使得S(K)=Z，Z为K结点所占存储空间的始单元。
+
+	
+				\item  存储结构
+					\begin{itemize}
+						\item  顺序结构
+			
+									按照连续地址空间的顺序依次的存放数据
+			
+						\item  链接结构
+
+									存储密度相比顺序结构下降
+
+						\item  索引结构
+						\item  散列结构
+
+									根据节点的值，通过一定的函数关系来确定数据元素的存储地址
+
+					\end{itemize}
+			\end{itemize}
+	\item 数据的运算关系
+				定义在逻辑结构上，在存储结构上实施，即：
+				\begin{itemize}
+					\item  抽象层面
+						\begin{itemize}
+							\item 逻辑关系
+							\item 需求
+						\end{itemize}
+					\item  实现层面
+						\begin{itemize}
+							\item 存储关系
+							\item 运算关系
+						\end{itemize}
+					\item  评价层面
+				\end{itemize}
+\end{enumerate}
+
+三个层次五个要素
+
+	\section{数据结构的选择与评价}
+		评价标准：
+			\begin{itemize}
+				\item 时间需要量 时间效率
+				\item 存储需要量 存储效率
+			\end{itemize}
+
+\chapter{算法}
+	\section{算法的定义}
+		\subsection{概述}
+
+			算法是一个问题的具体解决方案
+
+		\subsection{定义}
+
+			算法解决某一个问题的指令的有限集合
+
+			基本特征：
+				\begin{itemize}
+					\item 有穷性
+					\item 确定性
+					\item 可行性
+					\item 输入
+					\item 输出
+				\end{itemize}
+
+		\subsection{内涵及分类}
+			内涵体现在过程上
+				\begin{itemize}
+					\item 一般过程
+					\item 函数过程
+
+						强调结果
+
+				\end{itemize}
+
+		\subsection{算法与程序的异同}
+				\begin{itemize}
+					\item 程序不是算法
+					\item 程序不是算法 程序不一定满足有穷性
+				\end{itemize}
+
+	\section{算法的描述及设计原则}
+		\subsection{算法描述方法}
+			\begin{itemize}
+				\item 计算机程序设计语言
+
+					优点与缺陷：设计出=实现出
+
+				\item 自然语言
+					缺陷：雍长 二义性
+				\item PDL
+				\item 流程图
+			\end{itemize}
+
+		\subsection{算法基本标准}
+			\begin{itemize}
+				\item 正确性
+				\item 易读性
+				\item 健壮性
+				\item 高效性
+			\end{itemize}
+
+	\section{算法分析概论及有效算法}
+		\subsection{概念}
+
+			一般不需要知道精确的时间消耗，需要知道时间消耗的增长率大体在什么范围。
+
+			算法复杂性的阶：算法比较主要比较阶
+
+			时间复杂性（时间渐进复杂性）：利用某算法处理一个问题规模为n的输入所需要的时间，记为T(n)
+
+			空间复杂性：利用某算法处理一个 问题规模为n的输入 所需要的存储空间，记为S(n)。
+
+			阶：对一个正常数C，一个算法在时间Ο(n2)内能处理规模为n的输入，则称此算法的时间复杂度是Ο(n2)，读作“n2 阶”，即该算法的时间复杂度与n2 是同阶的。
+
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[width=0.7\textwidth]{figures/2.1.jpg}
+			    \caption{启动图形化安装界面}
+			    \label{fig_install_texlive}
+			\end{figure}
+
+			若一个算法时间复杂度为O(2n)，称其需要指数时间；若是O(nk)，称其为多项式时间。当n非常大时两个时间差异非常大。
+
+			以多项式时间为界限的算法称为有效算法。如果一个问题不存在以多项式时间为界限的算法，称为难解的（难解性问题）
+
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[width=0.7\textwidth]{figures/2.2.jpg}
+			    \caption{启动图形化安装界面}
+			    \label{fig_install_texlive}
+			\end{figure}
+
+			当n非常大时两个时间差异非常大。
+
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[width=0.7\textwidth]{figures/2.3.jpg}
+			    \caption{启动图形化安装界面}
+			    \label{fig_install_texlive}
+			\end{figure}
+
+			对于时间复杂度，会关注时间复杂度的ϱ最坏情况和时间复杂度的平均情况。
+
+		\subsection{复杂性分析}
+
+			不需要知道精确的数值，只需要知道他一个规模
+
+			\begin{itemize}
+				\item 时间复杂性的分析
+					\begin{enumerate}
+						\item 根据问题的特点合理选择一种或几种操作作为整个算法的“标准操作”（假设循环执行次数最多，循环就是标准操作）
+						\item 确定每个算法在给定输入下总共执行了多少次标准操作，并根据次数推导求出时间函数
+						\item 确定该函数的阶
+					\end{enumerate}
+				\item 空间复杂性的分析
+					\begin{enumerate}
+						\item 根据问题的特点合理选择一种或几种操作作为整个算法的“标准操作”（假设循环执行次数最多，循环就是标准操作）
+						\item 确定每个算法在给定输入下总共执行了多少次标准操作，并根据次数推导求出时间函数
+						\item 确定该函数的阶
+					\end{enumerate}
+				
+					要求各个算法的存储结构一样的前提下，关注算法所需的附加存储空间复杂性
+
+			\end{itemize}
+
+	\section{算法设计方法概论}
+		\subsection{概述}
+			\begin{itemize}
+				\item 用科学的方法进行算法设计
+				\item 最常用方法：自顶向下 逐步求精
+
+						顶层：问题的总和、抽象全貌
+
+						底层：问题的具体化、展开、细节
+
+						求精的方法：
+
+					\begin{enumerate}
+						\item 分而治之
+
+								将问题划分为一些不相交的部分，依次解决
+
+						\item 作出有限进展
+
+								采用一个朝解的方向得到有限进展的方法，反复应用，逐渐逼近
+
+						\item 情况分析
+
+								对问题各种情况给予分析，选择适当方案。
+
+					\end{enumerate}
+
+				\item 健壮性
+				\item 高效性
+			\end{itemize}
+
+		\subsection{算法设计的基本技术}
+			以下内容不做要求
+			\begin{itemize}
+				\item 穷举法
+				\item 分治法
+				\item 回溯法
+				\item 分支界限法
+				\item 动态规划法
+				\item 贪心法
+			\end{itemize}
+
+	\section{算法描述语言}
+		\subsection{PDL概述}
+
+			Program、Design、Language
+
+			即伪码语言，主要用来书写软件设计的规约，是基于我们自然语言与具体的成设计语言之间的一种语言。这是一种保留计算机、程序设计、语言的基本框架和描述形式，并去掉一些特异性和直接性的要求，再结合自然语言所形成的一种用于描述算法处理的逻辑语言。
+
+		\subsection{PDL的优势}
+			\begin{itemize}
+				\item 表达能力强，具有关键字的固定语法。提供了特定的结构化控制结构
+				\item 引入了自然语言的一些习惯，结构比较清晰，简单易读
+				\item 容易转化为任何一种程序设计语言代码（可由PDL生成程序代码）
+			\end{itemize}
+
+		\subsection{PDL书写及要求}
+			\begin{enumerate}
+				\item 算法的框架
+					\begin{itemize}
+						\item 一般过程的书写框架
+\begin{lstlisting}
+PROC 过程名(I/O参数);
+BEGIN
+	语句组
+END;
+\end{lstlisting}
+						\item 函数过程的书写框架
+\begin{lstlisting}
+FUNC 函数名(I/O参数):类型名;
+BEGIN
+	语句组
+END;
+\end{lstlisting}
+					\end{itemize}
+				\item 词的定义及说明
+
+						标识符：按照一定的规则形成的具有特定含义的一个词
+						\begin{itemize}
+							\item 过程名：调用前需定义
+							\item 常量名、变量名：使用前需说明
+
+									例如VAR i,j,k:integer
+
+									常见的数据类型名写法及表示：
+									\begin{itemize}
+										\item 整数型：integer
+										\item 实数型：real
+										\item 布尔型：boolean
+										\item 字符型（单字符）：char
+										\item 子介型（用于表达范围）：下界..上界，例如40..90(表示40-90)，'A'..'G'
+										\item 枚举类型：{0,1,2,3}  元素次序不能变
+										\item 构造类型
+											\begin{itemize}
+												\item 数组型：
+\begin{lstlisting}
+ARRAY[下标类型] OF 成分类型
+\end{lstlisting}
+												例如：
+\begin{lstlisting}
+A: ARRAY[1..20] OF integer
+\end{lstlisting}
+\begin{lstlisting}
+B: ARRAY[1..20,-10..20] OF real	//（B是点集，二维数组）
+\end{lstlisting}
+												\item 记录型：
+\begin{lstlisting}
+RECORD
+	域标识符1：类型1
+	              …
+	域标识符n：类型n
+END
+\end{lstlisting}
+例如：
+\begin{lstlisting}
+A=RECORD
+	Name:ARRAY[1…8] OF char;
+	Sex:0..1
+	Age:interger;
+  END
+\end{lstlisting}
+
+											\end{itemize}
+										\item 指针类型：
+\begin{lstlisting}
+↑ 类型名
+\end{lstlisting}
+例如：
+\begin{lstlisting}
+TYPE A=↑integer;		//指针类型
+\end{lstlisting}
+\begin{lstlisting}
+VAR B:↑integer;			//指针变量
+\end{lstlisting}
+
+									\end{itemize}
+
+						\end{itemize}
+				\item 基本语序
+					\begin{itemize}
+						\item 赋值语句：
+\begin{lstlisting}
+变量名←表达式
+\end{lstlisting}
+						\item 流程图
+						\item 条件语句
+							\begin{itemize}
+								\item 形式一
+\begin{lstlisting}
+if 条件 then 语句组
+\end{lstlisting}
+								\item 形式二
+\begin{lstlisting}
+if 条件 then 语句组1
+	else 语句组2
+\end{lstlisting}
+							\end{itemize}
+						\item 循环语句
+							\begin{itemize}
+								\item 当型（while）
+\begin{lstlisting}
+WHILE 条件 DO
+	语句组;
+\end{lstlisting}
+								\item 直到型（repeat）
+\begin{lstlisting}
+REPEAT
+	语句组;
+UNTIL 条件
+\end{lstlisting}
+								\item 从到型（for-to）
+									\begin{itemize}
+										\item 默认步长为1：
+\begin{lstlisting}
+FOR 变量←初值 TO 终值 DO
+	语句组;
+\end{lstlisting}
+										\item 自定义步长：
+\begin{lstlisting}
+FOR 变量←初值 TO 终值 STEP 步长值 DO
+	语句组;
+\end{lstlisting}
+										\item 倒数：
+\begin{lstlisting}
+FOR 变量←初值 DOWNTO 终值 DO
+	语句组;
+\end{lstlisting}
+									\end{itemize}
+
+							\end{itemize}
+						\item 输入语句：
+\begin{lstlisting}
+read(变量名表);
+\end{lstlisting}
+例：
+\begin{lstlisting}
+read(x,y,z);
+\end{lstlisting}
+						\item 输出语句
+\begin{lstlisting}
+write(变量名表);
+\end{lstlisting}
+					\end{itemize}
+				\item 拓展语序
+\begin{itemize}
+	\item 情况语句
+\begin{lstlisting}
+CASE
+	条件1:语句组1;
+	条件2:语句组2;
+	……
+	条件n:语句组n;
+	[ELSE 语句组n+1]
+ENDCASE
+\end{lstlisting}
+	\item 一般过程调用语句：
+\begin{lstlisting}
+Call 过程名;
+\end{lstlisting}
+	\item 函数过程调用：通过在表达式中引用函数名完成，即被引用函数名出现在表达式中。
+	\item 出错提示语句：
+\begin{lstlisting}
+error(错误信息);
+\end{lstlisting}
+	\item 终结语句
+\begin{lstlisting}
+Exit 	\\算法转向正常结束
+\end{lstlisting}
+\begin{lstlisting}
+Return \\算法转向正常结束，携带值离开
+\end{lstlisting}
+\begin{lstlisting}
+Abort 	\\中途废止（中止）
+\end{lstlisting}
+	\item 复合语句
+\begin{lstlisting}
+[ 	简单语句1;
+	简单语句2;
+	……
+	简单语句n;	]
+\end{lstlisting}
+或用Begin End 代替括号
+
+	\item 动态符号
+\begin{itemize}
+	\item 储存单元的引用：
+\begin{lstlisting}
+指针变量名↑
+\end{lstlisting}
+例：
+\begin{lstlisting}
+x↑
+\end{lstlisting}
+	\item 动态空间分配：
+\begin{lstlisting}
+New(P)
+\end{lstlisting}
+	\item 动态空间回收：
+\begin{lstlisting}
+Dispose(P)
+\end{lstlisting}
+	\item 空地址的表示：
+\begin{lstlisting}
+Nil
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+			\end{enumerate}
+
+\chapter{线性表}
+	\section{线性表及其运算}
+		\subsection{线性表的定义}
+		线性表的定义：一个线性表是n≥0个数据元素a1,a2,……,an的有限序列，序列中除第一及最后一个元素以外，每个元素有且只有一个直接前驱和直接后继。
+
+		简称表，可表示为：A=(a1,a2,……,an)
+\begin{lstlisting}
+ai:datatype	//表示ai 项可以是任何类型
+\end{lstlisting}
+
+		\subsection{线性表的特征}
+			\begin{itemize}
+				\item 有限的。线性表的表长：线性表元素的个数。控标的长度定义为0
+				\item 元素呈线性关系。元素的位置只取决于他们自己的逻辑顺序。
+			\end{itemize}
+
+		\subsection{线性表的运算}
+			\begin{itemize}
+				\item 确定线性表的长度n
+
+				\item 存取线性表的第i个数据元素，检验或改变某个数据项的值
+				\item 在第i-1个和第i个数据元素之间插入一个新的数据元素。约定插入的元素是第i个元素的直接前驱
+				\item 删除第i个元素
+				\item 将两个或两个以上的线性表合并成一个线性表
+				\item 将一个线性表拆分成两个或两个以上的线性表
+				\item 重新复制一个线性表
+				\item 对线性表中的数据元素依据某一种规则进行重组
+			\end{itemize}
+
+	\section{线性表的储存表示}
+\begin{itemize}
+	\item 线性表的向量表示
+		\begin{itemize}
+			\item 存储方法
+			顺序地分配存储单元，且每个数据元素占据相同大小的存储空间（顺序且等长）
+
+			\item 数据访问
+			TODO
+			\item 向量存储结构特性
+				\begin{itemize}
+					\item 储存分配呈线性结构
+					\item 属于随机存储结构（访问一个元素的代价与元素位置无关，即访问任何一个元素（找地址）的运算量一样，一维数组，通过下标变量来访问（数组构造的本质即算公式））
+
+				\end{itemize}
+			\item 向量存储结构的形式化表示
+			可用一个一维数组表示，由于数组属于静态结构，其空间规模须事先定义（1..max），要有个计数器记录数组长度（空间规模）
+
+			表述形式：
+\begin{lstlisting}
+TYPE SQLIST:ARRAY[1..max] OF datatype;							## 内容
+VAR n:0..max;				                                 ## 计数器（记录数组长度）
+\end{lstlisting}
+\begin{lstlisting}
+TYPE SQLIST= RECORD 
+						data:ARRAY[1..max] OF datatype;
+## 内容 n:0..max; ## 计数器（记录数组长度） 
+       END;
+\end{lstlisting}
+			\item 插入
+			\item 删除
+			\item 小结
+		\end{itemize}
+
+	\item 线性表的链表表示
+		\begin{itemize}
+			\item 单链表表示
+\begin{lstlisting}
+TYPE pointer=↑node;
+	node=RECORD 
+			data: datatype;
+			next: pointer;
+		   END; 
+	link=pointer;
+\end{lstlisting}
+			\item 带表头的单链表表示
+			\item 带表头结点的循环单链表表示
+			\item 带表头结点的双向循环链表表示
+\begin{lstlisting}
+TYPE pointer=↑node;
+	node=RECORD 
+			Left: pointer;
+			data: datatype;
+			
+			right: pointer;
+		   END;
+	dblink=pointer;
+\end{lstlisting}
+		\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{3.1.jpg}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{3.2.jpg}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+	\item 线性表的应用
+\end{itemize}
+
+
+\chapter{栈和队列}
+	\section{栈及其运算}
+	栈是工具性数据结构
+		\subsection{绪论}
+		\subsection{栈的基本定义}
+		栈是一个下限为常数，上限可变化的向量（或者反之）。有时称为堆栈或堆阵。
+
+		后进先出表（LIFO）
+
+		可变化一端称为栈顶，不变化的一端称为栈底
+
+		\subsection{与线性表的关系}
+			\begin{itemize}
+				\item 相同点
+					\begin{itemize}
+						\item 逻辑关系都是线性关系
+					\end{itemize}
+
+				\item 不同点
+					\begin{itemize}
+						\item 线性表可以从任意位置增删，栈的增删只能从表尾进行
+						\item 栈的运算是线性表的一个子集，且这个子集还需加以约束
+					\end{itemize}
+
+			\end{itemize}
+
+		\subsection{栈的运算}
+			\begin{itemize}
+				\item 入栈，PUSH(S)，完成往栈中加入元素的过程，即插入操作，也称为压栈
+				\item 出栈，POP(S)，完成从栈中取出元素的过程，即删除操作，也称为弹出
+			\end{itemize}
+
+		\subsection{栈的存储与运算的实现}
+		\subsection{多栈共存问题}
+
+	\section{栈的应用}
+
+	\section{队列及其运算}
+		\begin{itemize}
+			\item 绪论
+			分时和并行，主要处理对稀缺资源的争夺
+			\item 队列的定义
+			队列是一个下限和上限只能增加而不能减少（下限和上限的指针只能往一个方向移动）的向量（或者反之）
+
+			先进先出表（FIFO）
+			\item 队列与线性表
+			\begin{itemize}
+				\item 相同点
+					\begin{itemize}
+						\item 逻辑关系都是线性关系
+					\end{itemize}
+
+				\item 不同点
+					\begin{itemize}
+						\item 线性表可以从任意位置增删，队列的只能一端插入一端删除
+						\item 队列的运算是线性表的一个子集，且这个子集还需加以约束
+					\end{itemize}
+
+			\end{itemize}
+			\item 队列的运算
+				\begin{itemize}
+					\item 出队
+					\item 入队
+				\end{itemize}
+
+			\item 队列的存储与运算的实现
+		\end{itemize}
+
+	\section{受限的栈及队列（了解）}
+		\begin{itemize}
+			\item 双端队列
+
+			双端队列是一种所有的插入和删除都限制在表的两端进行的线性表
+			\item 双栈
+
+			双栈是一种加限制的双端队列，即从哪端进就只能从哪端出，就像是两个底部相连的栈
+			\item 超队列
+
+			超队列是一种删除受限制的双端队列，删除限制在一端，插入可以在两端
+			\item 超栈
+
+			超栈是一种插入受限制的双端队列，插入限制在一端，删除可以在两端
+		\end{itemize}
+
+\chapter{串}
 
 
 \chapter{latex部分用法简介}
