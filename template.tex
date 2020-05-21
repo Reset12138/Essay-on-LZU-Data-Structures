@@ -751,6 +751,117 @@ TYPE pointer=↑node;
 		\end{itemize}
 
 \chapter{串}
+	\subsection{串及其运算}
+	\begin{itemize}
+		\item 概述
+		
+		字符串是线性表模型数据元素实例化的体现
+
+		全称字符串
+
+		早期：作为输入输出的常量和提示
+
+		热点：中文信息处理
+		\item 串的定义
+		
+		一个由零个或多个字符组成的有穷序列称为串
+
+		简记为A='a1 a2  a3...an′
+
+		串的长度：串中所含的字符个数
+
+		空串：串长为零的串，记作Φ
+		
+		非空串
+
+		空白串：空白字符组成的串，记作'└┘'
+
+		串的相等：串长也相等，对应位置上的字符也一样
+
+		字串/主串：一个串中任意个连续字符组成的子序列称为该串的子串，该串成为它的所有子串的主串。不一定是一个真子集
+		\item 串的运算
+			\begin{itemize}
+				\item 赋值
+				
+				assign(S,chars)  将字符串常量chars赋给字符串变量S
+				\item 连接
+			
+				concatenation(S,T) 将字符串S和T联接在一起
+				\item 取子串
+			
+				substring(S,m,n) 从第m个位置开始取n个连续字符（通常）/从第m个位置开始到第n个位置
+				\item 求子串序号
+		
+				strindex(S,T,i) 确定串T在S中第一次出现的位置i
+				\item 串的插入
+			
+				strinsert(S,T,i)
+				\item 串的删除
+			
+				strdelete(S,m,n)
+				\item 串的复制
+		
+				copy(S,T)
+				\item 串的置换
+				
+				replace(A,B,C)（找到A中的B用C来替换）
+
+				replace(S,m,n,T)（把S字符串的（m到n/从m开始的n个字符）用T来替换）
+			\end{itemize}
+		\item 串的存储
+			\begin{itemize}
+				\item 顺序储存
+
+				一般用向量来表示，通常称为字符串数组、字符串变量、字符串常量
+					\begin{itemize}
+						\item 压缩模式
+
+						按字节存储数据 （C语言）
+
+						\item 非压缩格式
+
+						运算器以字为单位运算，存储器以字节为单位，为了避免转换浪费的时间，存储器以字为单位存储一个字符，变成非压缩模式（只存一个字母需要一个字的空间，比较浪费）
+					\end{itemize}
+				\item 索引储存
+
+				多用在对于多个字符串常量或者变量的组织
+				\item 链接储存
+
+				理论上研究的多，实际上用的少，不易于实现
+			\end{itemize}
+	\end{itemize}
+
+	\subsection{串的模式匹配}
+		\begin{itemize}
+			\item 概述
+
+	在模式分类或者问题回答系统等方面，将输入模式与样本模式进行匹配的过程啊，我们就把它称为模式匹配
+	
+	通常把S称为目标(或正文),把P称为模式，把从目标S中查找模式P的过程称为模式匹配
+	
+	串的匹配是模式匹配的实例化
+
+			\item 匹配的朴素算法（Brute-Force算法）
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[width=0.7\textwidth]{figures/5.1.jpg}
+			    \caption{启动图形化安装界面}
+			    \label{fig_install_texlive}
+			\end{figure}
+
+			处理基本思想：对正文顺序搜索
+				\begin{enumerate}
+					\item 逐次比较（对应字符依次比较）
+					\item 发现不匹配时，将P相对于S右移一位
+					\item 重复上述过程，直到成功或扫描完S
+				\end{enumerate}
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[width=0.7\textwidth]{figures/5.2.jpg}
+			    \caption{启动图形化安装界面}
+			    \label{fig_install_texlive}
+			\end{figure}
+		\end{itemize}
 
 
 \chapter{latex部分用法简介}
