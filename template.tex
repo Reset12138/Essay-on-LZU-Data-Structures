@@ -751,7 +751,7 @@ TYPE pointer=↑node;
 		\end{itemize}
 
 \chapter{串}
-	\subsection{串及其运算}
+	\section{串及其运算}
 	\begin{itemize}
 		\item 概述
 		
@@ -831,7 +831,7 @@ TYPE pointer=↑node;
 			\end{itemize}
 	\end{itemize}
 
-	\subsection{串的模式匹配}
+	\section{串的模式匹配}
 		\begin{itemize}
 			\item 概述
 
@@ -861,7 +861,104 @@ TYPE pointer=↑node;
 			    \caption{启动图形化安装界面}
 			    \label{fig_install_texlive}
 			\end{figure}
+
+			优化算法：KMP算法
 		\end{itemize}
+
+	\section{例题}
+	2019年兰州大学开源社区纳新面试题中有一题关于字符串的运算，现将代码附上。
+
+给出一个文本文件，其中每个单词不包括空格及跨行，单词由字符序列构成且不区分大小写，完成以下功能：统计给定单词在文本文件中出现的总次数。
+
+注：允许使用 string.h
+
+\begin{lstlisting}[language=c]
+#include<stdio.h>
+#include<string.h>
+
+char word[100];
+char text[10000];
+int count = 0;
+
+char trans(char c){
+    if(c >= 'A'&&c <= 'Z'){
+        c = c + 'a' - 'A';
+    }
+    return c;
+}
+
+void getword() {
+    char c;
+    int i = 1;
+    while (1) {
+        c = getchar();
+        if (c == '\n') break;
+        word[i] = trans(c);
+        i++;
+    }
+    word[0] = i - 1;//第0位存放单词长度
+    return;
+}
+
+void gettext() {
+    char c;
+    int i = 1;
+    while (1) {
+        c = getchar();
+        if (c == EOF) break;
+        text[i] = trans(c);
+        i++;
+    }
+    text[0] = i - 1;//第0位存放文本长度
+    return;
+}
+
+void check() {
+
+    int i = 0, j = 0;
+    int flag = 1;
+    while (1) {
+        i++;
+        j++;
+        if (i == text[0]) break;
+        if (text[i] == '\n' || text[i] == ' ') {
+            j = 0;
+            flag = 1;
+            continue;
+        }
+        if (flag == 0) {
+            continue;
+        }
+        if (text[i] != word[j])
+            flag = 0;
+        if (j == word[0]) {
+            if (flag == 1) {
+                if (text[i + 1] == '\n' || text[i + 1] == ' ')
+                    count++;
+            }
+            flag = 1;
+        }
+    }
+}
+
+int main()
+{
+    freopen("C:\\Users\\Kente\\Desktop\\123\\text.txt", "r", stdin);//假设给出的文本文件第一排是给定单词，第二排及之后是要统计的文本
+    getword();
+    gettext();
+    check();
+    printf("%d", count);
+    return 0;
+}
+
+/*text.txt
+ABC
+Abc abC dasasdsa abc
+dasdasdasdasd dasdasdasdasd
+abc ab
+*/
+\end{lstlisting}
+
 
 
 \chapter{latex部分用法简介}
