@@ -866,7 +866,7 @@ TYPE pointer=↑node;
 		\end{itemize}
 
 	\section{例题}
-	2019年兰州大学开源社区纳新面试题中有一题关于字符串的运算，现将代码附上。
+	2019年兰州大学开源社区纳新面试题中有一题关于字符串的运算，现将我的解决方案附于后文。
 
 给出一个文本文件，其中每个单词不包括空格及跨行，单词由字符序列构成且不区分大小写，完成以下功能：统计给定单词在文本文件中出现的总次数。
 
@@ -959,7 +959,67 @@ abc ab
 */
 \end{lstlisting}
 
+\chapter{数组和广义表}
 
+\chapter{树形结构}
+	\section{树的基本定义和运算}
+		\subsection{树形结构的概述}
+			\begin{itemize}
+				\item 与线性结构的差异
+				
+				直接后继可以是多个
+				\item 树形结构的地位
+
+				树是计算机中最重要的非线性结构
+				\item 讨论内容
+					\begin{itemize}
+						\item 逻辑角度
+						\item 存储方式
+						\item 应用
+						\item 模型
+						\begin{itemize}
+							\item 树
+							\item 二叉树
+						\end{itemize}
+					
+					\end{itemize}
+
+			\end{itemize}
+
+		\subsection{树的基本定义}
+		树T，是满足如下性质的有限个节点组成的非空集合
+			\begin{itemize}
+				\item T中有且仅有一个称为根的结点
+				\item 除根结点之外，其余结点分成m(m>0)个不相交的集合T1,T2,…,Tm，其中每个Ti 都是树，而且都称为T的子树。
+			
+			\end{itemize}
+		注意
+\begin{itemize}
+	\item 是递归定义
+	\item 定义中对于子树的个数及次序没有进行任何约束
+	\item 与图论中的树不同，是有向图中的根树的特例。隐含了向下的方向性
+
+\end{itemize}
+
+		\subsection{有序树的基本定义}
+		在树T中如果子树T1,T2,..,Tn 的相对次序是重要的(即有序的)，则称T为有向有序树，简称有序树。
+
+		默认树是有序树
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/7.1.png}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+
+		\subsection{森林（树林）}
+		森林是零棵或多棵不相交的树的集合（通常是有序集合）
+	\section{遍历二叉树}
+	\section{树、森林与二叉树的转换}
+	\section{线索树}
+	\section{树形结构的应用}
 
 \chapter{latex部分用法简介}
 
