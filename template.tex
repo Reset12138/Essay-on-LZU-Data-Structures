@@ -1362,7 +1362,93 @@ vp到vq的路径可以简写为：vp,vi1 ,vi2 ,…,vim, vq（用结点序简写�
 给图的每一条边加一个(非负的)数，这个与图的边相关的数值称为权(weight)。带权的图称为网。
 带权的连通图称为网络。（网络针对无向图）
 
-	\section{图的存储}
+	\section{图的存储}			
+		\subsection{邻接矩阵}
+定义：表示顶点之间邻接关系的矩阵称邻接矩阵
+			\subsubsection{图非网时}
+用 boolean 矩阵表示
+
+设图有n≥1个顶点，则图G的邻接矩阵定义为n阶方阵M，M满足下列性质：
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.5.png}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+对于无向图，它的邻接矩阵一定是一个对称矩阵，且矩阵第i行之和是顶点vi的度
+
+对于有向图，它的邻接矩阵一定是一个非对称矩阵，矩阵第i行之和是顶点vi的出度，矩阵第i列之和是顶点vi的入度。
+			\subsubsection{网的邻接矩阵}
+把原来的存1改成存权值。
+
+设图有n≥1个顶点，则图G的邻接矩阵定义为n阶方阵M，M满足下列性质：
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.6.png}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+
+在计算机中，∞可以取一个相对于问题而言相对大的数即可代表∞。
+		\subsection{邻接表}
+对图的每个顶点建立一个链表，也称邻接链表表示。
+
+有n个结点时有n个链表，第i个链表中的结点：
+			\begin{itemize}
+				\item 在无向图中：是与vi邻接的所有结点的收集。
+				\item 在有向图中：是以vi为始点的所有终点的收集。
+			\end{itemize}
+
+			\subsubsection{无向图}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.7.png}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+开头的结点是线性结构，可以用向量或者链表存，此处用向量存开头的节点。
+
+总链表结点数目：2e（每条边出现了两次）
+
+加上表头，存储空间需n+2e
+
+第i个链表中的结点个数： vi的度。
+
+无向图的邻接表，链表中的顺序可以随意变换，不分先后（即同一个图也可以有不同的邻接表）
+
+结点间是否有边判别比邻接矩阵困难。
+			\subsubsection{有向图}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.8.png}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+表节点数目：e
+
+总空间：n+e
+
+第i个链表中的结点个数： vi的出度。
+
+逆邻接表：以vi为终点的所有始点的收集。可用于获取邻接过来的结点。
+		\subsection{邻接多重表}
+邻接多重表以边为存储单位。
+
+边(u, v)结点结构：
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.9.png}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+\begin{itemize}
+	\item mark：标志域，标记该边是否被处理，也可存放权值等信息
+	\item u，v：关联边的两个顶点域
+	\item ulink：下一条与依附于u的边的地址（指针）
+	\item viink：下一条与依附于v的边的地址（指针）
+	\item info：其他信息
+\end{itemize}
 
 
 	\section{图的遍历}
