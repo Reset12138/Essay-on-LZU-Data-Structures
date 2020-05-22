@@ -1212,6 +1212,166 @@ abc ab
 	\section{线索树}
 	\section{树形结构的应用}
 
+\chapter{图结构}
+	\section{基本概念}
+		\subsection{概述}
+			\subsubsection{与线性结构和树形结构的差异}
+				\begin{itemize}
+					\item 一个元素可以有多个直接前驱和后继
+					\item 是多对多的数据关系
+				\end{itemize}
+			\subsubsection{地位}
+		
+				图结构非常重要的非线性结构。
+			\subsubsection{讨论内容}
+				\begin{itemize}
+					\item 计算机中的图的表示方法
+					\item 图的遍历
+					\item 求生成树
+					\item 找最短路径
+					\item 拓扑排序
+					\item 求关键路径
+				\end{itemize}
+		\subsection{概念}
+			\subsubsection{图}
+由n (n≥1)个结点v1,v2,…,vn 构成的数据G称为图，若结点集V={v1,v2,…,vn}上定义的称为后继的关系E是非自反的。
+
+可表示为G=(V,E)，V称为顶点集，E称为边集。只相当于
+
+研究的图相当于离散数学中的简单图，相当于简单图，即不包含重边和环（自回路），不研究：
+				
+				\begin{itemize}
+					\item 带自身环的图
+					\item 多重图
+				\end{itemize}
+			\subsubsection{有向图}
+
+在图G中，若每个关系都是顶点的有序对，则称G为有向图。
+
+有相图的表示有两种方法：
+\begin{itemize}
+	\item 形式化（符号）表示
+
+用有向线段指明了次序（方向）。
+	\item 图形描述
+
+一般用尖括弧表示顶点的有序对。
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\subfloat[形式化（符号）表示]{
+        \includegraphics[width=0.4\textwidth]{figures/8.1.png}
+    }\qquad
+	\subfloat[图形描述]{
+        \includegraphics[width=0.4\textwidth]{figures/8.2.png}
+    }\\
+    \caption{图的表示方法}
+    \label{fig_ide}
+\end{figure}
+
+在有向图中,若＜vi,vj＞∈E(G)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/8.3.png}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+则称vi是边的始点（或尾）; vj是边的终点（或头）; 并称vi邻接到vj ,vj是从vi邻接过来的; 称边<vi,vj>关联(或依附)于顶点vi和vj.
+
+推论:在n个结点的有向图中,其最大边数为n(n-1)。把等于n(n-1)条边的图称有向完全图。
+
+			\subsubsection{无向图}
+在图G中,如果每个关系都是顶点的无序对，则称G为无向图。
+有相图的表示有两种方法：
+	\begin{itemize}
+		\item 形式化（符号）表示
+	
+	用无向线段表示（方向）。
+		\item 图形描述
+	
+	一般用圆括弧表示顶点的无序对
+	\end{itemize}
+
+在无向图中,若(vi,vj)∈E(G)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/8.4.png}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+则称vi和vj是邻接的； 并称边(vi,vj)关联(或依附)于顶点vi和vj.
+
+在无向图中(v1,v2)和(v2,v1)这两个结点偶对表示同一条边。
+
+推论:在n个结点的无向图中,其最大边数为n(n-1)/2。把等于n(n-1)/2条边的图称无向完全图。
+
+			\subsubsection{顶点的度、入度、出度}
+在图中,顶点的度(degree), 就是与该顶点关联的边的数目。
+
+若G为无向图，则度为无向图中与某元素有关的元素的数量。
+
+若G为有向图，则
+\begin{itemize}
+	\item 把以vi为终点(头)的边的数目称作vi的入度(incoming degree ,in-degree)（即指向该元素的边数）
+	\item 把以vi为始点(尾)的边的数目称作vi的出度(out going degree )（即从该元素指出去的边数）
+\end{itemize}
+
+在有向图中,出度为0的顶点称终端顶点(叶子)。
+
+推论:设图G有n个结点，t条边，若di为顶点vi的度，显然有：TODO
+
+
+
+			\subsubsection{子图}
+设图G=(V,E), 如果有图G'=(V',E') , 且E'包含于E, V'包含于V，则称G'为G的子图。
+
+如果图G的子图包含G的所有顶点，则该子图称为G的生成子图。
+
+自己可以是自己的子图v。
+
+			\subsubsection{路径、回路、图根}
+对于图G=(V,E),若存在结点序列vp,vi1 ,vi2 ,…,vim, vq使得(vp ,vi1),(vi1 ,vi2),…,(vim ,vq)都在E(G)中(对于有向图使得<vp ,vi1>,<vi1 ,vi2>,…,<vim ,vq>都在E(G)中), 则称从顶点vp到vq存在一条路径(或通路，path) ，路径长度定义为这条路径上边的数目。 (路径：一个特定的点边交替序列)。
+
+vp到vq的路径可以简写为：vp,vi1 ,vi2 ,…,vim, vq（用结点序简写）。
+
+如果一条路径上的顶点除vp和vq可以相同以外其它顶点都不相同，则此路径为一简单路径。（即中间没有重复经过的点）。
+
+把vp=vq的简单路径，称作回路(或环，loop)。(不包含自身环)。
+
+若在一个有向图中存在一个顶点v0，从此顶点有路径可以到达图中其它所有顶点,则此有向图称为是有根的图，v0称作图根。（树是有向图中的有根图的特殊情况）
+
+			\subsubsection{连通性}
+\begin{itemize}
+	\item 无向图
+
+两个顶点的连通：在无向图G中，顶点u和v(u≠v)之间存在一条路径，则称顶点u和顶点v是连通的。
+
+图的连通：对于无向图G中的任意两个顶点u,v(u≠v)都是连通的则称此无向图是连通的，或称G为连通图。（仅有无向图才谈 图的连通）。
+
+最大(或极大)连通子图：无向图的连通分量。连通分量是一个（或多个）子图，不是一个数字。
+	\item 有向图
+
+两个顶点的连通：在有向图G中,顶点u和v(u≠v)之间存在一条从u到v和v到u的(有向)路径，则称顶点u和顶点v是连通的。（就是两个点能互相到达）
+
+图的强连通：有向图G中的任意两个顶点u，v(u≠v)都是连通的则称此有向图是强连通的,或称G为强连通图。
+
+一个有向图的强连通分量定义为该图的最大(或极大)强连通子图（的个数）。（有向图不谈图的连通，只谈图的强/弱连通）
+\end{itemize}
+
+			\subsubsection{网}
+给图的每一条边加一个(非负的)数，这个与图的边相关的数值称为权(weight)。带权的图称为网。
+带权的连通图称为网络。（网络针对无向图）
+
+	\section{图的存储}
+
+
+	\section{图的遍历}
+	\section{连通性及最小生成树}
+	\section{有向无环图及应用}
+	\section{最短路径}
+
+
+
 \chapter{latex部分用法简介}
 
 注意啊，看这个教程，template.pdf配合template.tex\textbf{一起看}，才能学习latex怎么用的
