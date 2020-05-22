@@ -1452,7 +1452,70 @@ vp到vq的路径可以简写为：vp,vi1 ,vi2 ,…,vim, vq（用结点序简写�
 
 
 	\section{图的遍历}
+		\subsection{概述}
+			\subsubsection{定义}
+给出图G和其中的任意一个顶点v0（人为给出），从v0出发系统地访问G中所有的顶点,且每个顶点仅被访问一次,这一过程称为图的遍历(graph traversal),或遍历图。
+			\subsubsection{辅助结构}
+须设立辅助结构，可用数组visited[1..n]表征
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.10.png}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+			\subsubsection{搜索策略}
+\begin{itemize}
+	\item 深度优先搜索(DFS, depth-first search)
+
+搜索中，结点扩展的次序向某一个分支纵深推进，到底后再回溯。
+	\item 广度优先搜索(BFS, breadth-first search)
+
+搜索中，对所在层次的所有结点逐个依次进行扩展后，再推进到下一个层次进行扩展。
+\end{itemize}
+
+		\subsection{图的深度优先遍历}
+			\subsubsection{图的深度优先遍历的基本思想}
+			\begin{enumerate}
+				\item 访问出发节点 v0，标记 v0 为已访问
+				\item 选择一个 v0 邻接到的且未被访问过的结点 u
+				\item 从u开始进行深搜（递归开始）
+			\end{enumerate}
+			\subsubsection{基于邻接表}
+			面授部分讲解
+
+		\subsection{图的广度优先遍历}
+			\subsubsection{图的广度优先遍历的基本思想}
+			\begin{enumerate}
+				\item 访问出发点v0
+				\item 访问v0邻接到的所有未被访问过的节点v1,v2,...,vt
+				\item 再依次访问v1,v2,...,vt邻接到的所有未被访问的结点
+				\item 如此进行下去，直到无法找到未被访问的结点时，则本次搜索就算结束
+			\end{enumerate}
 	\section{连通性及最小生成树}
+		\subsection{连通分量和生成树}
+			\subsubsection{求图的连通分量}
+			思想：将图的遍历中搜索算法DFS(或BFS)中的访问动作具体化(即输出顶点及与之关联的边)，每启动一次DFS(或BFS)就可以得到1个连通分量。
+			\subsubsection{求生成树}
+通过图的遍历可获取其生成子图。
+
+对于连通图来说该生成子图，实际上是一棵树结构(恰好有n-1条边，它们把n个事物关联起来，可称其是原图的极小连通子图)
+
+以下三种情况：
+\begin{itemize}
+	\item 图是连通的
+	\item 图是强连通的
+	\item 出发点v0为图根
+\end{itemize}
+在遍历过程中，访问的节点和经过的边，所构成的生成子图，恰好可以构成一个树形结构，称为生成树。对于有n个顶点的连通图，其生成树具有n-1条边，即生成树是图的最小结构。
+
+对于不连通的无向图和不是强连通的有向图，从任一结点出发只能得到生成森林。
+
+生成树因为出发点不同，深、广不同而不唯一。
+
+基于遍历方法我们可以构造极小连通子图（一谈连通图一定是无向图）（即节点不变，关联关系最小）。
+
+			\subsection{最小生成树}
+最小生成树是边的权值之和最小的网络的生成树
 	\section{有向无环图及应用}
 	\section{最短路径}
 
