@@ -1516,6 +1516,39 @@ vp到vq的路径可以简写为：vp,vi1 ,vi2 ,…,vim, vq（用结点序简写�
 
 			\subsection{最小生成树}
 最小生成树是边的权值之和最小的网络的生成树
+				\subsubsection{普里姆(Prim)算法}
+				基本思想：设V={1,2,…,n}是图G的顶点集合，PRIM算法由一个初值为{v0}的集合U开始，它每次生成一条边，逐渐长成一棵具有最小代价的生成树。
+
+算法在每一步中都找出一个最小权的边(u,v),其中u∈U, v ∈V-U.（U,V是点集，U是已经找到的点的集合，V是所有点）
+
+即从任意一个点出发找到已找到的点集到未找到的点集中权值最小的一条路径不断连接即可
+
+v0：种子节点，可任选
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.11.png}
+    \caption{普里姆(Prim)算法例子}
+    \label{fig_install_texlive}
+\end{figure}
+
+				\subsubsection{克鲁斯卡尔(Kruskal)算法}
+基本思想：对于图G=(V,E)，该算法初始化从T=(V, Ø)开始,此时生成树是由n个连通分量（即n个孤立顶点组成）组成的一个制图——目标使得n个连通分量逐渐成为一个连通分量。具体做法：
+					\begin{enumerate}
+						\item 初始化
+						从T=(V, Ø)开始，即E=Ø
+						\item 按照权值递增的顺序逐个考虑E中的每条边：
+							\begin{enumerate}
+								\item 若该边连通了在两个不同连通分量中的顶点，则将该边填加到T中
+								\item 重复(1) ，一旦T中包含了n-1条边，则终止运算
+							\end{enumerate}
+					\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.12.png}
+    \caption{克鲁斯卡尔(Kruskal)例子}
+    \label{fig_install_texlive}
+\end{figure}
+
 	\section{有向无环图及应用}
 	\section{最短路径}
 
