@@ -1016,8 +1016,199 @@ abc ab
 
 		\subsection{森林（树林）}
 		森林是零棵或多棵不相交的树的集合（通常是有序集合）
+
+	\section{二叉树}
+		\begin{itemize}
+			\item 定义
+			\item 特性
+			\item 二叉树的存储表示
+		\end{itemize}
+
 	\section{遍历二叉树}
+		\subsection{概念}
+		定义：对于给定的数据结构,系统地访问该结构中的每个结点，且每个结点仅被访问一次的操作过程称遍历
+
+		系统地：按照一定的规律、次序
+
+		访问：对元素进行的某种操作
+
+		遍历本质上是一个运算过程（序列）
+
+		对于给定的二叉树，系统地访问该结构中的每个结点,且每个结点仅被访问一次的操作过程称遍历
+
+		\subsection{二叉树的遍历次序（order）}
+			\begin{itemize}
+				\item 层次策略
+					\begin{itemize}
+						\item 自上而下
+							\begin{enumerate}
+								\item 从左到右
+								\item 从右到左
+							\end{enumerate}
+						\item 自下而上
+					\end{itemize}
+				\item 深度策略
+				遍历针对结构，是一个过程；访问针对一个点，是一个动作。
+				\begin{figure}[H]
+				    \centering
+				    \includegraphics[width=0.7\textwidth]{figures/7.2.png}
+				    \caption{启动图形化安装界面}
+				    \label{fig_install_texlive}
+				\end{figure}
+				\begin{itemize}
+					\item 先根（前序）DLR
+
+					先拿到根，然后从左子树走，又是二叉树，则访问了左子树的根节点，再往下走，直到访问到k，左子树为空，回到c，访问右子树。沿着纵深往下搜索，只要有子树就往下搜索，先不管兄弟。
+					\item 中根LDR
+					\item 后根（后序）LRD
+				\end{itemize}
+
+			\end{itemize}
+
 	\section{树、森林与二叉树的转换}
+		\subsection{概述}
+		转换原因
+		\begin{itemize}
+			\item 二叉树有许多优良特性，而树没有
+			\item n叉树中二叉树的空间利用率最高
+		\end{itemize}
+		\subsection{树转为二叉树}
+		这里约定树为有序树，子树的次序相对固定
+
+		转换规则：
+		\begin{enumerate}
+			\item 加线（亲兄弟之间加上虚连线）
+			\item 抹线（除了最左子节点之外，抹掉所有节点与其余子节点的连线）
+			\item 调整（调成二叉树的样子，原有连线在左，新加连线在右）
+		\end{enumerate}
+		\begin{figure}[H]
+		    \centering
+		    \includegraphics[width=0.7\textwidth]{figures/7.3.png}
+		    \caption{启动图形化安装界面}
+		    \label{fig_install_texlive}
+		\end{figure}
+		特点：
+		\begin{itemize}
+			\item 原有兄弟成为右结点及右结点的右列结点
+			\item 根子树仅有左节点
+		\end{itemize}
+
+		\subsection{二叉树还原为树}
+		转换规则：
+		\begin{enumerate}
+			\item 加线（如果有个节点X是父结点的左子树，那么它的右子树，右子树的右子树...都与X的父节点加线）
+			\item 抹线（所有节点抹掉与右子树的连线）
+			\item 调整（让节点按层次分布）
+		\end{enumerate}
+
+		\subsection{森林转为二叉树}
+		两种方法：
+		\begin{itemize}
+			\item 方法一：树转换
+
+			将每棵树转为二叉树
+			\item 方法二：二叉树连接
+		
+			依据转换得到的二叉树的次序，将后一棵作为前一棵根节点的右子树，因为树转二叉树的根节点无右子树
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[width=0.7\textwidth]{figures/7.4.png}
+			    \caption{启动图形化安装界面}
+			    \label{fig_install_texlive}
+			\end{figure}
+		\end{itemize}
+
+		\subsection{二叉树转为森林}
+		转换规则：
+		\begin{enumerate}
+			\item 抹线（沿着根节点，抹掉其右子树与根节点的连线，不断往右下搜索）
+			\item 还原（把每棵二叉树还原树）
+		\end{enumerate}
+		\begin{figure}[H]
+		    \centering
+		    \includegraphics[width=0.7\textwidth]{figures/7.5.png}
+		    \caption{启动图形化安装界面}
+		    \label{fig_install_texlive}
+		\end{figure}
+
+		\subsection{树的遍历}
+		\begin{itemize}
+			\item 方法一：树转换
+
+			将每棵树转为二叉树后再处理，处理完成后还原
+			\item 方法二：直接处理
+
+						遍历次序
+						\begin{itemize}
+							\item 层次策略
+								\begin{itemize}
+									\item 自上而下
+										\begin{enumerate}
+											\item 从左到右
+											\item 从右到左
+										\end{enumerate}
+									\item 自下而上
+								\end{itemize}
+							\item 深度策略
+								\begin{itemize}
+									\item 先根（前序）DLR
+										\begin{enumerate}
+											\item 访问树的根节点
+											\item 先根次序下依次遍历树的根节点的每个子树
+										\end{enumerate}
+									\item 中根LDR
+									
+										一般不讨论
+									\item 后根（后序）LRD
+										\begin{enumerate}
+											\item 后根次序下依次遍历树的根节点的每个子树
+											\item 访问树的根节点
+										\end{enumerate}
+								\end{itemize}
+						\end{itemize}
+		\end{itemize}
+
+		\subsection{森林的遍历}
+		\begin{itemize}
+			\item 方法一：树转换
+
+			将每棵树转为二叉树后再处理，处理完成后还原
+			\item 方法二：直接处理
+
+					遍历次序
+						\begin{itemize}
+							\item 层次策略
+								\begin{itemize}
+									\item 自上而下
+										\begin{enumerate}
+											\item 从左到右
+											\item 从右到左
+										\end{enumerate}
+									\item 自下而上
+								\end{itemize}
+							\item 深度策略
+								\begin{itemize}
+									\item 先根（前序）DLR
+										\begin{enumerate}
+											\item 访问第一颗树的根节点
+											\item 先根次序下依次遍历第一颗树的根节点的每个子树
+											\item 先根次序下依次遍历其余的树
+										\end{enumerate}
+									\item 中根LDR
+										
+									一般不讨论
+									\item 后根（后序）LRD
+										\begin{enumerate}
+											\item 后根次序下依次遍历第一棵树的根节点的每个子树
+											\item 访问第一颗树的根节点
+											\item 后根次序下依次遍历其余的树
+										\end{enumerate}
+								\end{itemize}
+						\end{itemize}
+		\end{itemize}
+
+
+
 	\section{线索树}
 	\section{树形结构的应用}
 
