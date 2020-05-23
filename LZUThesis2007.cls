@@ -186,7 +186,7 @@
 
 \fancypagestyle{mainmatterstyle}{
     \fancyhf{}
-    \lhead{\zihao{-5}兰州大学本科生毕业论文}%
+    \lhead{\zihao{-5}兰州大学本科生毕业论文（并不是）}%
     \rhead{\zihao{-5}\@title}
     % Footers
     \fancyfoot{} % clear all footer fields
