@@ -1688,6 +1688,316 @@ v0：种子节点，可任选
 其基本思想是，设置一个顶点集合S，并不断地作贪心选择来扩充这个集合。该算法属于算法设计方法中的贪心算法(greedy selector)类——总是作出当前看来最好的选择，通过获取局部最优，最终达到获取整体最优）。
 
 		\subsection{每对顶点的最短路径(all-pairs shortest path)}
+
+\chapter{排序}
+	\section{基本概念}
+		\subsection{概论}
+排序是数据结构运算层面的问题。
+
+排序(sorting)是计算机程序设计中的一种重要的运算，其功能是将一个数据元素的任意序列，按照要求重新排列成按一定规则有序的序列。
+
+排序(又称分类)通常可以理解为：根据与项目中所包含的关键字或信息项的有关规则，对信息项目加以排列整理的动作过程。
+		\subsection{相关概念}
+			\subsubsection{关键字(key)}
+如果数据元素(或结点、记录)中的某个数据项的值可以用它标识一个数据元素，则将该数据项称为关键字。
+
+关键字这一项往往不反应事物的本质。
+			\subsubsection{主、次关键字}
+\begin{itemize}
+	\item 主关键字
+
+可以唯一地标识一个记录的关键字称为主关键字（Major Key、Primary Key），实际应用中关键字不加声明时都指的是主关键字。
+        Major key:在一个记录中的最主要的关键字；
+
+        Primary key:在文件组织中,进行大量访问时所用关键字。
+
+	\item 次关键字
+
+次关键字（辅助关键字、Secondary Key):可以识别若干记录的关键字称次关键字。
+\end{itemize}
+			\subsubsection{排序}
+设含有n个记录的集合为R={r1,r2,…,rn},其对应的关键字集合为K={k1,k2,…,kn},给定关系$\alpha$，按照关系$\alpha$针对关键字集合K对R进行运算，使得R有如下序列:(r$\alpha$1, r$\alpha$2 ,…, r$\alpha$n)，我们将这个操作过程称为排序。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.16.png}
+    \caption{排序的本质}
+    \label{fig_install_texlive}
+\end{figure}
+本质是在关系$\alpha$下寻找R的一种排列的过程。
+
+
+			\subsubsection{排序的稳定性}
+      在排序关系下，假设排序前ri在rj之前，排序之后领先关系不变，则称此排序过程和排序方法是稳定的，否则是不稳定的。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.17.png}
+    \caption{排序的稳定性例子}
+    \label{fig_install_texlive}
+\end{figure}
+			\subsubsection{排序的分类}
+排序一般涉及大量数据，而大规模数据一般都存放于外部存储器上，并以文件的形式出现。因此，依据排序过程中数据所处位置，可以将排序分为两大类：
+\begin{itemize}
+	\item 内(部)排序:
+
+将整个待排序的文件装入内存，并在其中进行排序,这种排序过程称为内(部)排序(internal sorting)。
+	\item 外(部)排序:
+
+由于数据规模过大，排序过程不能在内存中一次完成，需要不断进行内外存数据交换才能完成排序，这样的排序过程称外(部)排序(external sorting)。
+
+\end{itemize}
+
+			\subsubsection{排序的应用}
+\begin{itemize}
+	\item 作为检索的辅助手段
+	\item 作为数据项匹配的手段
+\end{itemize}
+			\subsubsection{影响排序的因素}
+		\subsection{存储结构设计}
+排序运算可以遵循前面运用的一些存储结构，但有时为了保证高效的排序，可能还需要设计一些特殊的存储方式。
+
+排序常用的存储结构有以下几种：
+
+			\subsubsection{向量}
+待排序的初始文件各记录依其自然顺序存放在连续的一块地址空间中。
+			\subsubsection{链表结构}
+记录以结点形式按记录原始次序链接起来。
+
+			\subsubsection{地址向量结构}
+将要排序文件的各个记录存储到内存的各个块中，这些块的地址一般是不连续的。按各记录的原始次序，将这些的块的首地址依次存入内存的一块连续单元中，由各块的首地址组成了一个向量——地址向量。
+
+这样可实现局部连续,整体不连续的组织模式，这种组织方式具有较高的实用性。
+
+就是原来的索引结构
+	\section{插入排序}
+		\subsection{插入类排序基本方法}
+			\subsubsection{基本思想：}
+
+\begin{enumerate}
+	\item 每次只考虑一个待排记录 r
+	\item 将 r 按照排序关系插入到一个已经有序的文件适当位置
+	\item 重复上述过程直到全部记录插完为止
+\end{enumerate}
+		\subsection{直接插入排序(straight insertion sort)}
+\begin{enumerate}
+	\item 将要排序的源文件F=R1,R2,…,Rn,视为两部分：
+
+​ F'=R1; F''= R2,…,Rn
+	\item 对F'和F''重复如下工作：
+\begin{enumerate}
+	\item 从F''中取出一个记录Ri，并将Ri从F''中删除
+	\item 将Ri插入到F'并使F'线性有序
+\end{enumerate}
+
+\end{enumerate}
+第i个记录的插入过程：
+\begin{enumerate}
+	\item 进行插入准备：先取出第i个元素放入x临时存储（x ← R[i]; j←i-1）
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.18.png}
+    \caption{将第i个元素放入x临时存储}
+    \label{fig_install_texlive}
+\end{figure}
+
+	\item 寻找插入位置：向前进行比较, 条件：(x.key<R[j].key) and (1 $\le$ j)
+
+	\item 插入元素归位：R[j+1] ← x
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.19.png}
+    \caption{直接插入算法过程}
+    \label{fig_install_texlive}
+\end{figure}
+
+		\subsection{二分插入排序(dichotomising  insertion sort)}
+也称折半插入排序。与直接插入排序的区别：在插入第i个时搜索采用二分策略。
+
+仅对比较次数有改善，移动次数无影响。算法过程如下：
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.20.png}
+    \caption{二分插入算法过程}
+    \label{fig_install_texlive}
+\end{figure}
+
+		\subsection{2-路插入排序}
+在二分插入排序的基础上再改进。
+
+目的：减少排序过程中记录的移动次数。
+
+借助辅助空间D[1..n]。
+
+		\subsection{表插入排序(list inserting sort)}
+采用链式结构来组织待排序的数据元素。        
+
+是一种较为古典的算法，仅适用于链结构，下完成分类。
+
+其独到之处是利用链结构的特点，通过变更记录指针来调整记录的逻辑顺序，从而在不发生记录迁移的情况下完成分类。
+		\subsection{希尔排序(Shell  sort)}
+         又称缩小增量法(diminishing increment sort),是一种快速的排序方法,1959年由D.L.Shell提出。
+			\subsubsection{基本思想}
+	把对源文件F的排序分成多步来完成，算法在每步中取一个步长 d，将F逻辑上看成 d 个文件。
+\begin{enumerate}
+	\item 按照插入排序的办法把这 d 个文件分别排序；
+	\item 然后缩小 d 
+	\item 重复1-2，直到 d=1 的一次排序为止
+\end{enumerate}
+	\section{交换排序}
+		\subsection{交换类排序基本方法}
+			\subsubsection{基本思想：}
+每次考虑两个待排序的记录。
+
+依据排序关系两两比较待排序记录，并交换不满足顺序要求的那些偶对，直到全部满足为止。
+
+		\subsection{起泡排序(bubble sort)}
+			\subsubsection{基本思想：}
+先比较R1与R2,如果R1大,则交换R1和R2；然后对R2和R3做同样的处理,重复此过程直到处理完Rn-1和Rn的比较和交换。
+
+这样从(R1, R2), (R2, R3),直到 (Rn-1, Rn)的n-1次比较和交换过程我们称为一趟起泡。
+
+一趟起泡的明显结果是将最大的传到了最后(最终位置)。
+
+显然，第二趟起泡只需进行(R1, R2), (R2, R3),…,(Rn-2, Rn-1)的比较和交换。
+
+这样最多做n-1次起泡即可得到最终有序序列。
+
+若一趟起泡中没有发现元素交换，则已经有序，可以直接终止交换。
+
+			\subsubsection{分析}
+\begin{itemize}
+	\item 算法是稳定的;      
+	\item 算法时间复杂性分析：
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.21.png}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+	\item 算法空间复杂性分析：O(1)
+\end{itemize}
+		\subsection{快速排序(quick sort)}
+			\subsubsection{概述}
+        也称分区交换排序，或Hoare排序。1962年首先由霍尔(C.A.R.Hoare)提出。
+是至今为止内部(比较)排序中较快的一种。它有广泛的应用，典型的应用是UNIX系统调用库函数例程中的qsort函数。
+       但快速排序往往由于最差时间代价的性能而在某些应用中无法采用。越接近有序性能越差。
+        主要特点是采取了分治的思想。
+			\subsubsection{快排基本思想：}
+(以下比较指关键的比较，关键字指排序关键字)
+\begin{enumerate}
+	\item 在待排序的n个记录中任取一个记录r(例如就取第1个)，作为轴心元素
+	\item 以r为标准将所有记录分为两组。第1组中各记录的关键字都小于r的关键字；第2组中各记录的关键字都大于r的关键字
+	\item 并把r排在这两组中间(最终位置),这一过程称为一趟快排
+	\item 然后对这两组分别重复上述方法，直到所有记录都排在应有位置上
+\end{enumerate}         
+			\subsubsection{一趟快排描述}
+初始准备：
+\begin{itemize}
+	\item 建一个额外空间x存放取出来的任意元素
+	\item 设置两个指针i，j
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.22.png}
+    \caption{初始准备}
+    \label{fig_install_texlive}
+\end{figure}
+处理：
+\begin{enumerate}
+	\item 当(i<j)且R[j].key＞x.key时，j指针前进
+	\item 如果i＜j，则：
+\begin{enumerate}
+	\item R[j]$\Rightarrow$R[i];  i+1$\Rightarrow$i
+	\item 当(i<j)且R[i].key＜x.key时，i指针前进
+	\item 如果 i＜j ，则：R[i]$\Rightarrow$R[j];  j-1$\Rightarrow$j
+\end{enumerate}
+	\item 如果  i=j ，则本趟结束，否则转⑴
+	\item 以上结束后：x$\Rightarrow$ R[i]
+\end{enumerate}
+			\subsubsection{快排算法过程}
+
+	\section{选择排序}
+	\section{合并排序}
+	\section{枚举排序}
+	\section{分配排序}
+
+\chapter{数据检索介}
+	\section{基本概念}
+		\subsection{概论}
+本章集中讨论非数值程序设计中的另一个重要的技术问题——检索 (search,或称为查找seek).
+		\subsection{相关概念}
+			\subsubsection{检索}
+在给定数据结构中查找满足某种条件的数据元素(或结点、记录)的过程。
+
+			\subsubsection{检索的分类}
+\begin{itemize}
+	\item 基于关键字的检索
+
+在给定的结构中找出关键字等于指定值的结点。检索成功时，往往只得到一个结点即可
+	\item 基于属性的检索
+
+在给定结构中找出某属性值等于指定值的结点。检索成功时，检索结果往往是一批结点
+
+\end{itemize}
+
+			\subsubsection{检索方法的分类}
+根据检索对象的组织关系和检索对象的存储组织模式，检索算法有三类：
+\begin{itemize}
+	\item 顺序表和线性表方法
+	\item 直接访问法(散列方法);
+	\item 树索引方法;
+
+
+\end{itemize}
+			\subsubsection{检索算法的特性}
+\begin{itemize}
+	\item 内外有别
+
+分内检索和外检索。内检索是内存能够容纳全部记录的情形。 
+	\item 静态动态
+
+      静态检索时，表的内容不变(即一个单纯的查找过程)；动态检索时，表中的内容不断地在变动(即表有频繁地插入/删除记录的操作)。
+	\item 原字变字
+
+      原字系指用原来的关键字；所谓变字是指使用经过变换过的关键字。
+
+	\item 数字文字
+
+       指比较时用不用数字的性质。用数字的性质就是象排序算法中那样作各位数的分布计数,而不是直接对关键字进行比较,例如字符树就是使用数字性质。
+
+\end{itemize}
+
+			\subsubsection{检索算法效率的度量}
+平均检索长度(ASL, Average Search Length)：检索过程中对关键字(或属性)要执行的平均运算次数。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.23.png}
+    \caption{启动图形化安装界面}
+    \label{fig_install_texlive}
+\end{figure}
+			\subsubsection{相关概念}
+	\section{线性表的检索}
+	\section{树形结构的检索}
+	\section{散列表的检索}
+	\section{基于属性的检索}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{latex部分用法简介}
 
 注意啊，看这个教程，template.pdf配合template.tex\textbf{一起看}，才能学习latex怎么用的
