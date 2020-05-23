@@ -1550,10 +1550,144 @@ v0：种子节点，可任选
 \end{figure}
 
 	\section{有向无环图及应用}
+一个无环的有向图，我们称为有向无环图(DAG, directed acyclic graph)。这一节只讨论DAG。是介于树形结构和有向图之间的一种模型，在实际工程应用中价值比较高。
+		\subsection{拓扑排序}
+			\subsubsection{相关术语}
+\begin{itemize}
+	\item AOV-网
+
+若有向图G中,顶点表示活动或任务,有向边表示活动或任务之间的优先关系,则此有向图称为顶点表示活动的网络。(AOV-网，Activity On Vertex Network)
+
+一个AOV-网要能够表达一个可执行的工程则其优先关系应当是非自反的。
+
+若存在回路，则说明某项活动的能否进行是要以自身任务的完成作为先决条件。对一个程序来说相当于出现了死循环。因此给定一个AOV-网,当要检测该网所表示的工程是否可以实现时,就可以通过检查其是否有回路来完成。一种有效的方法就是拓扑排序(寻找图的偏序序列的过程)。
+	\item 拓扑序列
+
+对于有向图G=(V,E),V中的顶点的线性序列(vi1, vi2, … , vin)，称作一个拓扑序列，若此结点序列满足如下条件：在G中从顶点u到顶点v有一条路径，则在序列中u必在v之前。
+
+拓扑序列不唯一
+
+任何无环的有向图，其顶点都可以排在一个拓扑序列中
+
+	\item 拓扑排序
+
+寻找图的拓扑序列的过程。
+图中的拓扑序列往往不止一个。拓扑排序只需要找到一个。
+\end{itemize}
+
+			\subsubsection{拓扑排序基本思想}
+\begin{enumerate}
+	\item 从图中选择一个入度为零的顶点
+	\item 输出该顶点，从图中删除此顶点及其所有的出边
+\end{enumerate}
+反复执行以上两步，直到所有顶点都输出,此时拓扑排序完成；或者直到剩下的图中再无入度为零的顶点,此时说明图G是有环的图，拓扑排序无法完成。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.13.png}
+    \caption{死锁实例}
+    \label{fig_install_texlive}
+\end{figure}
+			\subsubsection{拓扑排序实现——基于邻接矩阵}
+基于基本思想中的关键两步，进行具体细化：
+				\begin{enumerate}
+					\item 选择入度为零的结点u——选择全零的列u。（行发出，列接收）
+					\item 输出顶点，删除出边
+						\begin{enumerate}
+							\item 顶点的输出
+				
+				策略：拓扑序列可通过辅助辅助数组S[1..n]保存, 具体取值：
+				\begin{figure}[H]
+				    \centering
+				    \includegraphics[width=0.7\textwidth]{8.14.png}
+				    \caption{启动图形化安装界面}
+				    \label{fig_install_texlive}
+				\end{figure}
+				
+							\item 删除出边，删除u所有出边
+				
+				删除u所有出边即讲邻接矩阵中第u行置零。
+						\end{enumerate}
+				\end{enumerate}
+算法步骤：
+\begin{enumerate}
+	\item 辅助数组S置零，输出次序计数器置初值(即：设定顶点的输出的顺序编号的起步值）
+	\item 寻找没有输出编号的全零的列u，如果没有，则算法终止。此时S中所有元素都有输出编号，则拓扑排序完成；否则有环。
+	\item 将输出次序号赋给S[u]。
+	\item 把第u行置成全零。
+	\item 输出次序号加1，回到2。
+
+\end{enumerate}
+算法复杂度为O(n3)
+			\subsubsection{拓扑排序实现——基于邻接表}
+\begin{itemize}
+	\item 预处理工作
+				\begin{itemize}
+					\item 存储结构的优化
+				
+				要获取入度，需有逆邻接表。要删除所有出边，需有邻接表。两个需求无法同时满足。于是做以下处理：选择邻接表，在图建立的时候加一个入度项，计算每个结点的入度。
+				\begin{figure}[H]
+				    \centering
+				    \includegraphics[width=0.7\textwidth]{8.15.png}
+				    \caption{邻接表结构设计}
+				    \label{fig_install_texlive}
+				\end{figure}
+				
+					\item 设置一个集合存放参与运算的结点
+				
+				需要一个结构(S)保存其它入度为零的顶点，以备选用。S可以采用栈。
+				\end{itemize}
+	\item 运算的步骤
+		\begin{enumerate}
+			\item 搜索邻接表中入度为零的顶点，并令其进栈
+			\item 当栈非空时，进行拓扑排序：
+				\begin{enumerate}
+					\item 退栈，输出栈顶元素u
+					\item （循环）在邻接表中扫描u的直接后继顶点k
+						\begin{itemize}
+							\item 将k入度减一
+							\item 若此时k的入度为零，则k入栈
+						\end{itemize}
+				\end{enumerate}
+			\item 若栈空，输出元素不足n则有环，否则拓扑排序完成
+		\end{enumerate}
+	\item 栈结构的优化设计
+
+为了保存待输出的入度为零的结点(可保存在栈S中)，但这需要额外的空间。
+
+邻接表中的入度域是要参与运算的(减法)，因此在拓扑排序后，该域将失去实际意义；另外入度为0的顶点的入度域是不会参与运算的,因此,S可借用这些单元作为栈的存储空间；这样可以将入度为零的顶点的入度域组织成一个静态的链栈。此时indegree域相当于next域的作用。
+\end{itemize}
+		\subsection{关键路径}
+			\subsubsection{AOE-网及关注的问题}
+与AOV-网对应的是AOE网。AOE-网在企业管理、工程计划等当中有广泛的应用。
+
+若在带权有向图中顶点表示事件，有向边表示活动，权表示活动持续的时间，则此有向图称为边表示活动的网络(AOE-网， Activity On Edge Network).
+
+表示实际工程(或计划)的AOE-网，应该是无环的，且存在唯一入度为零的起始顶点(始点)，以及唯一的出度为零的完成顶点(终点)。
+
+关注的点：
+\begin{itemize}
+	\item 利用事件AOE-网可以进行工程安排估算，研究完成整个工程至少需要多少时间
+	\item 为缩短整个工程的完成时间，应该加快哪些活动的速度
+\end{itemize}
+
+
+在AOE-网要解决这些问题，可以采用多种技术：
+\begin{itemize}
+	\item PERT(Program Evaluation and Review Technique)(程序评价和审定技术)
+	\item CPM(Critical Path Method)(关键路径法)
+	\item RAMPS(Resources Allocation and Multi-Project Scheduling )(资源分配和多项目调度)
+
+\end{itemize}
+
 	\section{最短路径}
+		\subsection{单源最短路径}
+单源最短路径是指从一个顶点到其它各顶点之间的最短路径(single-source shortest path)。
 
+迪杰斯特拉(E.W.Dijkstra)于1959年提出了一个寻找单源最短路径的方法。
 
+其基本思想是，设置一个顶点集合S，并不断地作贪心选择来扩充这个集合。该算法属于算法设计方法中的贪心算法(greedy selector)类——总是作出当前看来最好的选择，通过获取局部最优，最终达到获取整体最优）。
 
+		\subsection{每对顶点的最短路径(all-pairs shortest path)}
 \chapter{latex部分用法简介}
 
 注意啊，看这个教程，template.pdf配合template.tex\textbf{一起看}，才能学习latex怎么用的
