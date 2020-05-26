@@ -1,6 +1,9 @@
 # 《数据结构》课程的学习报告
 2020年兰州大学数据结构课程作业
-模板Fork至余航学长的仓库
+
+根据学校要求，笔记要以论文方式提交，故采用兰州大学本科生毕业论文的格式改写我的课堂学习笔记。
+
+论文模板Fork至余航学长的仓库。
 
 使用方法如下：
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
