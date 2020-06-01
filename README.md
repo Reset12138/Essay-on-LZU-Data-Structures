@@ -10,46 +10,59 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [兰州大学本科生2020（学士学位）LaTeX模板](#%e5%85%b0%e5%b7%9e%e5%a4%a7%e5%ad%a6%e6%9c%ac%e7%a7%91%e7%94%9f2020%e5%ad%a6%e5%a3%ab%e5%ad%a6%e4%bd%8dlatex%e6%a8%a1%e6%9d%bf)
-  - [一、使用方法](#%e4%b8%80%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95)
-    - [现状0：以前用的这个模板，现在需要升级](#%e7%8e%b0%e7%8a%b60%e4%bb%a5%e5%89%8d%e7%94%a8%e7%9a%84%e8%bf%99%e4%b8%aa%e6%a8%a1%e6%9d%bf%e7%8e%b0%e5%9c%a8%e9%9c%80%e8%a6%81%e5%8d%87%e7%ba%a7)
-      - [如何使用兰州大学2007老版论文要求](#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8%e5%85%b0%e5%b7%9e%e5%a4%a7%e5%ad%a62007%e8%80%81%e7%89%88%e8%ae%ba%e6%96%87%e8%a6%81%e6%b1%82)
-    - [现状1：论文直接用这个模板开始写](#%e7%8e%b0%e7%8a%b61%e8%ae%ba%e6%96%87%e7%9b%b4%e6%8e%a5%e7%94%a8%e8%bf%99%e4%b8%aa%e6%a8%a1%e6%9d%bf%e5%bc%80%e5%a7%8b%e5%86%99)
-    - [现状2：以前用的LZUThesis2017](#%e7%8e%b0%e7%8a%b62%e4%bb%a5%e5%89%8d%e7%94%a8%e7%9a%84lzuthesis2017)
-      - [这个项目与LZUThesis2017主要区别](#%e8%bf%99%e4%b8%aa%e9%a1%b9%e7%9b%ae%e4%b8%8elzuthesis2017%e4%b8%bb%e8%a6%81%e5%8c%ba%e5%88%ab)
-      - [你需要做什么](#%e4%bd%a0%e9%9c%80%e8%a6%81%e5%81%9a%e4%bb%80%e4%b9%88)
-  - [二、常见问题](#%e4%ba%8c%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
-    - [1、编译出来的没有**参考文献**或**目录**，或者直接失败：](#1%e7%bc%96%e8%af%91%e5%87%ba%e6%9d%a5%e7%9a%84%e6%b2%a1%e6%9c%89%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae%e6%88%96%e7%9b%ae%e5%bd%95%e6%88%96%e8%80%85%e7%9b%b4%e6%8e%a5%e5%a4%b1%e8%b4%a5)
-    - [2、正文第一章，编号却是第二章？](#2%e6%ad%a3%e6%96%87%e7%ac%ac%e4%b8%80%e7%ab%a0%e7%bc%96%e5%8f%b7%e5%8d%b4%e6%98%af%e7%ac%ac%e4%ba%8c%e7%ab%a0)
-    - [3、linux环境下编译失败](#3linux%e7%8e%af%e5%a2%83%e4%b8%8b%e7%bc%96%e8%af%91%e5%a4%b1%e8%b4%a5)
-    - [4、为什么中文加粗命令`\textbf{}`或者`\bfseries`都没反应？](#4%e4%b8%ba%e4%bb%80%e4%b9%88%e4%b8%ad%e6%96%87%e5%8a%a0%e7%b2%97%e5%91%bd%e4%bb%a4textbf%e6%88%96%e8%80%85bfseries%e9%83%bd%e6%b2%a1%e5%8f%8d%e5%ba%94)
-    - [5、编译的和预期有差别，你把缓存的文件清理一下，重新四步走进行编译](#5%e7%bc%96%e8%af%91%e7%9a%84%e5%92%8c%e9%a2%84%e6%9c%9f%e6%9c%89%e5%b7%ae%e5%88%ab%e4%bd%a0%e6%8a%8a%e7%bc%93%e5%ad%98%e7%9a%84%e6%96%87%e4%bb%b6%e6%b8%85%e7%90%86%e4%b8%80%e4%b8%8b%e9%87%8d%e6%96%b0%e5%9b%9b%e6%ad%a5%e8%b5%b0%e8%bf%9b%e8%a1%8c%e7%bc%96%e8%af%91)
-    - [6、表格居中、换页、换行、图片并列排等，怎么用](#6%e8%a1%a8%e6%a0%bc%e5%b1%85%e4%b8%ad%e6%8d%a2%e9%a1%b5%e6%8d%a2%e8%a1%8c%e5%9b%be%e7%89%87%e5%b9%b6%e5%88%97%e6%8e%92%e7%ad%89%e6%80%8e%e4%b9%88%e7%94%a8)
-    - [7、其他的](#7%e5%85%b6%e4%bb%96%e7%9a%84)
-  - [三、更新日志](#%e4%b8%89%e6%9b%b4%e6%96%b0%e6%97%a5%e5%bf%97)
+- [兰州大学本科生2020（学士学位）LaTeX模板](#%E5%85%B0%E5%B7%9E%E5%A4%A7%E5%AD%A6%E6%9C%AC%E7%A7%91%E7%94%9F2020%E5%AD%A6%E5%A3%AB%E5%AD%A6%E4%BD%8Dlatex%E6%A8%A1%E6%9D%BF)
+  - [一、使用方法](#%E4%B8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+    - [现状0：以前用的这个模板，现在需要升级](#%E7%8E%B0%E7%8A%B60%E4%BB%A5%E5%89%8D%E7%94%A8%E7%9A%84%E8%BF%99%E4%B8%AA%E6%A8%A1%E6%9D%BF%E7%8E%B0%E5%9C%A8%E9%9C%80%E8%A6%81%E5%8D%87%E7%BA%A7)
+      - [如何使用兰州大学2007老版论文要求](#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%85%B0%E5%B7%9E%E5%A4%A7%E5%AD%A62007%E8%80%81%E7%89%88%E8%AE%BA%E6%96%87%E8%A6%81%E6%B1%82)
+    - [现状1：论文直接用这个模板开始写](#%E7%8E%B0%E7%8A%B61%E8%AE%BA%E6%96%87%E7%9B%B4%E6%8E%A5%E7%94%A8%E8%BF%99%E4%B8%AA%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%A7%8B%E5%86%99)
+    - [现状2：以前用的LZUThesis2017](#%E7%8E%B0%E7%8A%B62%E4%BB%A5%E5%89%8D%E7%94%A8%E7%9A%84lzuthesis2017)
+      - [这个项目与LZUThesis2017主要区别](#%E8%BF%99%E4%B8%AA%E9%A1%B9%E7%9B%AE%E4%B8%8Elzuthesis2017%E4%B8%BB%E8%A6%81%E5%8C%BA%E5%88%AB)
+      - [你需要做什么](#%E4%BD%A0%E9%9C%80%E8%A6%81%E5%81%9A%E4%BB%80%E4%B9%88)
+  - [二、常见问题](#%E4%BA%8C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
+    - [-1. 英文字体略有不同（花体太花）](#-1-%E8%8B%B1%E6%96%87%E5%AD%97%E4%BD%93%E7%95%A5%E6%9C%89%E4%B8%8D%E5%90%8C%E8%8A%B1%E4%BD%93%E5%A4%AA%E8%8A%B1)
+    - [0. 封面“兰州大学教务处”几个字跑到了第二页，或者不在最下面（偏上）](#0-%E5%B0%81%E9%9D%A2%E5%85%B0%E5%B7%9E%E5%A4%A7%E5%AD%A6%E6%95%99%E5%8A%A1%E5%A4%84%E5%87%A0%E4%B8%AA%E5%AD%97%E8%B7%91%E5%88%B0%E4%BA%86%E7%AC%AC%E4%BA%8C%E9%A1%B5%E6%88%96%E8%80%85%E4%B8%8D%E5%9C%A8%E6%9C%80%E4%B8%8B%E9%9D%A2%E5%81%8F%E4%B8%8A)
+    - [1、编译出来的没有**参考文献**或**目录**，或者直接失败：](#1%E7%BC%96%E8%AF%91%E5%87%BA%E6%9D%A5%E7%9A%84%E6%B2%A1%E6%9C%89%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E6%88%96%E7%9B%AE%E5%BD%95%E6%88%96%E8%80%85%E7%9B%B4%E6%8E%A5%E5%A4%B1%E8%B4%A5)
+    - [2、正文第一章，编号却是第二章？](#2%E6%AD%A3%E6%96%87%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%BC%96%E5%8F%B7%E5%8D%B4%E6%98%AF%E7%AC%AC%E4%BA%8C%E7%AB%A0)
+    - [3、linux环境下编译失败](#3linux%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5)
+    - [4、为什么中文加粗命令`\textbf{}`或者`\bfseries`都没反应？](#4%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%AD%E6%96%87%E5%8A%A0%E7%B2%97%E5%91%BD%E4%BB%A4%5Ctextbf%E6%88%96%E8%80%85%5Cbfseries%E9%83%BD%E6%B2%A1%E5%8F%8D%E5%BA%94)
+    - [5、编译的和预期有差别，你把缓存的文件清理一下，重新四步走进行编译](#5%E7%BC%96%E8%AF%91%E7%9A%84%E5%92%8C%E9%A2%84%E6%9C%9F%E6%9C%89%E5%B7%AE%E5%88%AB%E4%BD%A0%E6%8A%8A%E7%BC%93%E5%AD%98%E7%9A%84%E6%96%87%E4%BB%B6%E6%B8%85%E7%90%86%E4%B8%80%E4%B8%8B%E9%87%8D%E6%96%B0%E5%9B%9B%E6%AD%A5%E8%B5%B0%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91)
+    - [6、表格居中、换页、换行、图片并列排等，怎么用](#6%E8%A1%A8%E6%A0%BC%E5%B1%85%E4%B8%AD%E6%8D%A2%E9%A1%B5%E6%8D%A2%E8%A1%8C%E5%9B%BE%E7%89%87%E5%B9%B6%E5%88%97%E6%8E%92%E7%AD%89%E6%80%8E%E4%B9%88%E7%94%A8)
+    - [7、其他的](#7%E5%85%B6%E4%BB%96%E7%9A%84)
+    - [8、目录有页码，但是要求中不需要](#8%E7%9B%AE%E5%BD%95%E6%9C%89%E9%A1%B5%E7%A0%81%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E4%B8%AD%E4%B8%8D%E9%9C%80%E8%A6%81)
+    - [9、摘要的标题换行有点迷醉，而且小写的化学式都被大些了](#9%E6%91%98%E8%A6%81%E7%9A%84%E6%A0%87%E9%A2%98%E6%8D%A2%E8%A1%8C%E6%9C%89%E7%82%B9%E8%BF%B7%E9%86%89%E8%80%8C%E4%B8%94%E5%B0%8F%E5%86%99%E7%9A%84%E5%8C%96%E5%AD%A6%E5%BC%8F%E9%83%BD%E8%A2%AB%E5%A4%A7%E4%BA%9B%E4%BA%86)
+  - [三、更新日志](#%E4%B8%89%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97)
+    - [2020.06.01](#20200601)
+    - [2020.5.29](#2020529)
+    - [2020.5.24](#2020524)
     - [2020.5.19](#2020519)
     - [2020.5.10](#2020510)
     - [2020.4.13](#2020413)
     - [2020.4.10](#2020410)
     - [2020.4.7](#202047)
     - [2020.4.4](#202044)
-  - [四、其他](#%e5%9b%9b%e5%85%b6%e4%bb%96)
-    - [学校的要求有哪些变化](#%e5%ad%a6%e6%a0%a1%e7%9a%84%e8%a6%81%e6%b1%82%e6%9c%89%e5%93%aa%e4%ba%9b%e5%8f%98%e5%8c%96)
-    - [项目主要文件](#%e9%a1%b9%e7%9b%ae%e4%b8%bb%e8%a6%81%e6%96%87%e4%bb%b6)
-    - [编译器选择](#%e7%bc%96%e8%af%91%e5%99%a8%e9%80%89%e6%8b%a9)
-    - [高级操作](#%e9%ab%98%e7%ba%a7%e6%93%8d%e4%bd%9c)
+  - [四、其他](#%E5%9B%9B%E5%85%B6%E4%BB%96)
+    - [学校的要求有哪些变化](#%E5%AD%A6%E6%A0%A1%E7%9A%84%E8%A6%81%E6%B1%82%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8F%98%E5%8C%96)
+    - [项目主要文件](#%E9%A1%B9%E7%9B%AE%E4%B8%BB%E8%A6%81%E6%96%87%E4%BB%B6)
+    - [编译器选择](#%E7%BC%96%E8%AF%91%E5%99%A8%E9%80%89%E6%8B%A9)
+    - [高级操作](#%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # 兰州大学本科生2020（学士学位）LaTeX模板
 
+2020.5.30做了个毕业答辩模板 LZUBeamer：[Gitee](https://gitee.com/yuhldr/LZUBeamer) 和 [Github](https://github.com/yuhlzu/LZUBeamer)，可以去看看：
+
+![图](figures/ppt.png)
+
+
 为什么选择这个模板？
 
 1. 因为这是i兰大易班（兰朵儿）app的开发者制作的 ~
-2. 因为这个模板经过了多人多平台测试，包括Mac、Windows、Linux三种平台
-3. 因为这是目前与学校要求最为符合的一个LaTex模板
-4. 因为这个项目有最为详尽的文档说明
-5. 在国内[Gitee: LZUThesis2020](https://gitee.com/yuhldr/LZUThesis2020)和国外[Github: LZUThesis2020](https://github.com/yuhlzu/LZUThesis2020)开源网站同步发布，防止被墙
+2. 因为模板包含2007标准（2020届毕业生，大多数学院要求的是这个）和2020标准两个模板
+3. 因为这个模板经过了多人多平台测试，包括Mac、Windows、Linux三种平台
+4. 因为这是目前与学校要求最为符合的一个LaTex模板
+5. 因为这个项目有最为详尽的文档说明
+6. 在国内[Gitee: LZUThesis2020](https://gitee.com/yuhldr/LZUThesis2020)和国外[Github: LZUThesis2020](https://github.com/yuhlzu/LZUThesis2020)开源网站同步发布，防止被墙
 
 根据[这个项目](https://github.com/suchot/LZUThesis2017)进行修改的，mac、linux、windows三系统全部测试通过，linux缺一个字体，看[常见问题：linux环境下编译失败](#3%e3%80%81linux%e7%8e%af%e5%a2%83%e4%b8%8b%e7%bc%96%e8%af%91%e5%a4%b1%e8%b4%a5)，其他出现什么问题，也看下面的[常见问题](#%e4%b8%89%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
 
@@ -57,21 +70,23 @@
 
 我强烈建议你用git管理毕业论文，每天写完以后就提交到gitee（速度比github快无数倍）上！！！不然不小心删除了或者中病毒了什么的，哭都没地方哭去
 
+**********
+
 ## 一、使用方法
 
-据说这个网站：[overleaf](https://cn.overleaf.com/)挺好用（我没用，不喜欢在线版的），可以直接直接上传这个模板，在线使用。如果你就这一次用LaTex，以后都不需要了，可以试一下，但是如果你还上研究生要发文章，还是按照下面的本地安装一下吧
+据说这个网站：[overleaf](https://cn.overleaf.com/)挺好用（记得在菜单里把编译方式改成xelatex！！不要动不动就说模板是坏的……），可以直接直接上传这个模板，在线使用。如果你就这一次用LaTex，以后都不需要了，可以试一下，但是如果你还上研究生要发文章，还是按照下面的本地安装一下吧
 
 ### 现状0：以前用的这个模板，现在需要升级
 
-请下载[lzubib.bst](bib/lzubib.bst)和[LZUThesis.cls](/LZUThesis.cls)，替换你论文项目中原有的这两个文件。并且开启伪加粗！
+请下载[lzubib.bst](bib/lzubib.bst)、[LZUThesis.cls](/LZUThesis.cls)（2020.5.24版本重新绘制了封面logo图，记得下载并且放到你的figure目录：[lzu2020.png](figures/lzu2020.png)，[lzu2007.png](figures/lzu2007.png)），替换你论文项目中原有的这两个文件。并且开启伪加粗！
 
 ```tex
 % \documentclass{LZUThesis}
 % 注意2020.5.19（2.0.0）以后的版本，开启伪加粗将会非常完美！
+% 2007标准请使用 \documentclass[AutoFakeBold]{LZUThesis2007}
+
 \documentclass[AutoFakeBold]{LZUThesis}
 ```
-
-**注意！**
 
 #### 如何使用兰州大学2007老版论文要求
 
@@ -103,18 +118,21 @@
 
 注意更新以后，请使用四步走重新编译出pdf文件
 
+----
+
 ### 现状1：论文直接用这个模板开始写
 
-**前3步详细请见[template.pdf](template.pdf)**
+包含2007和2020两个模板，前3步详细请见[template.pdf](template.pdf)
 
 1. 安装texlive2020
 
 2. 测试安装是否成功
 
-3. 配置编译器，可见[编译器选择](#%e7%bc%96%e8%af%91%e5%99%a8%e9%80%89%e6%8b%a9)
+3. 配置编译器，可见[编译器选择](#%e7%bc%96%e8%af%91%e5%99%a8%e9%80%89%e6%8b%a9)，不要使用Texlive自带的texwork！！请使用vscode！！vscode！！
 
 4. texlive安装好并且把编译器配置完成后，只要把[paper.zip](paper.zip)下载然后解压就可以了，所有的都在那单独有一份，直接在那里面的`paper.tex`里写论文（很多学院还是要求之前的模板，如果你要用2007的模板，请在里面的`paper2007.tex`里写论文）
 
+-----
 
 ### 现状2：以前用的[LZUThesis2017](https://github.com/suchot/LZUThesis2017)
 
@@ -199,14 +217,39 @@
 ## 二、常见问题
 
 你可一定要先安装texlive2020，可参考[现状1：论文直接用这个模板开始写](#%e7%8e%b0%e7%8a%b61%e8%ae%ba%e6%96%87%e7%9b%b4%e6%8e%a5%e7%94%a8%e8%bf%99%e4%b8%aa%e6%a8%a1%e6%9d%bf%e5%bc%80%e5%a7%8b%e5%86%99)
-    
+
+### -1. 英文字体略有不同（花体太花）
+
+V2.1.3以及以后的版本，为了让英文字体完全与Times New Roman字体相同，使用了mathptmx和fontspec包，但是这么做会导致花体，mathcal和mathscr完全相同（正常mathcal会花的轻一些）。
+
+在windows上，引用mathptmx包，正文、公式中的英文就会变成新罗马（Times New Roman）字体，但是mac系统上，没有任何效果，还是默认的罗马字体（和Times New Roman很相似，QR两个单词区分明显，之前的字体整体偏细），所以我在2.1.3以及之后的模板中加入了以下两个命令：
+
+```tex
+\RequirePackage{mathptmx} %加入这条命令会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些。
+\RequirePackage{fontspec} %这一条在windows可有可无，效果相同，但是mac上必须。
+```
+
+### 0. 封面“兰州大学教务处”几个字跑到了第二页，或者不在最下面（偏上）
+
+你的题目太长了，你可以改一下模板
+
+模板中搜索“兰州大学教务处”，在它上面有一行类似如下：可以调整40（或者100）这个数字
+
+```tex
+\vspace{40pt}
+%或者
+\vspace{100pt}
+```
+
 ### 1、编译出来的没有**参考文献**或**目录**，或者直接失败：
 
 不要用pdflatex那个！需要四步走xelatex - bibtex - xelatex - xelatex，具体什么意思，百度吧；
 
 ### 2、正文第一章，编号却是第二章？
 
-> 那是因为绪论当做了第一章，你可以在正文前面重新计数
+> ~~那是因为绪论当做了第一章，你可以在正文前面重新计数~~
+
+请把绪论作为第一章，大多数老师不认第0章！！！
 
 ```tex
 %生成目录
@@ -273,10 +316,59 @@
 - 不怎么懂模板，还非要乱改
 - ……
 
+### 8、目录有页码，但是要求中不需要
 
+其实，不要什么事情都来找模板的问题，你可以自己改的，目录去掉页码可以在tex文件里改
+
+```tex
+%生成目录
+\tableofcontents
+% 去掉页码
+\thispagestyle{empty}
+```
+
+### 9、摘要的标题换行有点迷醉，而且小写的化学式都被大些了
+
+这个。。。你可以自己来，改模板对应的位置就行，不要自动英文大写了，自己敲
+
+打开你用的模板[LZUThesis2007.cls](/LZUThesis2007.cls)（或你在用[LZUThesis.cls](/LZUThesis.cls)）
+
+```tex
+
+% 中文摘要，找到下面一行
+ \zihao{3}\bfseries\heiti \noindent\@title\the\titlextra
+% 修改\@title\the\titlextra  这一部分替换成你自己想要的标题
+
+%英文摘要，找到下面一行
+\zihao{3} \bfseries \noindent \expandafter\MakeUppercase\expandafter{\the\entitle\the\entitletra}
+
+% \expandafter\MakeUppercase\expandafter{\the\entitle\the\entitletra}  这一部分替换成你自己想要的标题
+
+```
 -----
 
 ## 三、更新日志
+
+### 2020.06.01
+
+醉了，英文字体有点问题，建议更新cls模板文件。详情见
+[-1. 英文字体略有不同（花体太花）](#-1-%E8%8B%B1%E6%96%87%E5%AD%97%E4%BD%93%E7%95%A5%E6%9C%89%E4%B8%8D%E5%90%8C%E8%8A%B1%E4%BD%93%E5%A4%AA%E8%8A%B1)
+
+### 2020.5.29
+
+我论文写完了，应该不会再改了
+
+1. 参考文献左右对齐，行间距段间距修改，更符合要求
+2. 目录紧凑，更符合要求，记得在tex里面生成目录的后面加上`\thispagestyle{empty}`，去掉目录的页码
+3. 新增常见问题8，9
+    - [8、目录有页码，但是要求中不需要](#8%E7%9B%AE%E5%BD%95%E6%9C%89%E9%A1%B5%E7%A0%81%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E4%B8%AD%E4%B8%8D%E9%9C%80%E8%A6%81)
+    - [9、摘要的标题换行有点迷醉，而且小写的化学式都被大些了](#9%E6%91%98%E8%A6%81%E7%9A%84%E6%A0%87%E9%A2%98%E6%8D%A2%E8%A1%8C%E6%9C%89%E7%82%B9%E8%BF%B7%E9%86%89%E8%80%8C%E4%B8%94%E5%B0%8F%E5%86%99%E7%9A%84%E5%8C%96%E5%AD%A6%E5%BC%8F%E9%83%BD%E8%A2%AB%E5%A4%A7%E4%BA%9B%E4%BA%86)
+
+### 2020.5.24
+
+1. 重新绘制兰大logo图，与word版更相似
+2. 更新README文档，新增vscode配置教程
+3. 更新template文档
 
 ### 2020.5.19
 
@@ -368,18 +460,98 @@ mac版与windows分开打包，增加说明文件
 
 4. template.tex是用来写论文的，这个文件名字可以修改
 
-
 --------
 
 ### 编译器选择
 
-1. 不喜欢texStudio或者texmaker，用vscode吧，配置很简单，习惯sublime text3的也行
+用vscode吧，配置很简单
 
-    [windows系统 vscode用法](https://zhuanlan.zhihu.com/p/38178015)
+1. 安装vscode：
+   去官网安装：[Vscode](https://code.visualstudio.com/)
+2. 安装插件：
 
-    [mac系统 vscode用法](https://www.jianshu.com/p/c09b3409317f)
+    在vscode左边侧栏插件处输入latex，安装以下两个插件
 
-    [linux系统 vscode用法](https://www.jianshu.com/p/c09b3409317f)
+    LaTex Workshop（latex全功能）
+
+    LaTex Utilities（vscode下面状态栏字数统计）
+
+3. 配置vscode：
+   点左下角螺丝帽，选择设置，找到任何一个`在settings.json中编辑`，点击跳转，另起一行，将下面的内容复制到设置区：
+
+   注意：你复制的内容下面有一个右大括号 `}` ，复制的内容前面有一个英文逗号`,` ; 复制下面的内容以后，如果有红色曲线，说明你配置得有问题，一般是逗号、大括号什么的有问题
+
+   ```json
+
+    "latex-workshop.latex.tools": [
+
+        {
+            // 编译工具和命令
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": []
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+
+        {
+            "name": "xe->bib->xe->xe",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        // {
+        //     "name": "latexmk",
+        //     "tools": [
+        //         "latexmk"
+        //     ]
+        // },
+    ],
+    ```
+
+4. 配置成功以后的界面：
+
+    注意配置以后要打开vscode，再点开一个.tex文件，才会出现下面的样子
+
+    点xe->bib->xe->xe就可以编译，平时只是修改文档，没有引入参考文献和图表公式的引用，只需要ctrl 和s（mac：command 和 s）快捷键就可以编译。
+   ![图](figures/vscode_4.png)
 
 -------
 

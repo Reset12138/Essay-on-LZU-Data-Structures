@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis}[2020/05/19 V2.0.0 Thesis for LZUer By yuhldr]
+\ProvidesClass{LZUThesis}[2020/06/01 V2.1.3 Thesis for LZUer By yuhldr]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
 % 部分内容参考了https://github.com/suchot/LZUThesis2017，适配了2020最新的毕业论文要求
@@ -143,8 +143,11 @@
 \graphicspath{{figures/}{figure/}{pictures/}
       {picture/}{pic/}{pics/}{image/}{images/}}
 \RequirePackage[svgnames]{xcolor}
+
 % 下面这个会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些
-% \RequirePackage{mathptmx}% %Times New Roman字体
+\RequirePackage{mathptmx}% %Times New Roman字体（windows上这句会把正文和公式英文字体都变成Times New Roman，但是mac上这句话不起作用，必须加上下面的，正文字体才会变）
+\RequirePackage{fontspec} %用电脑上自带的字体
+
 \RequirePackage{float}%控制图片位置 参数H
 \RequirePackage[T1]{fontenc}
 
@@ -216,8 +219,13 @@
 \RequirePackage[titles]{tocloft}
 \renewcommand\cftchapdotsep{0.5}                %虚线间隔
 \renewcommand\cftdotsep{0.5}                    %虚线间隔
-\renewcommand{\cftchapafterpnum}{\vspace{6pt}} %章节间隔 ，节前6磅
-\setlength{\cftbeforesecskip}{6pt}              %章节间隔 ，节前6磅
+% \renewcommand{\cftchapafterpnum}{\vspace{6pt}} %章节间隔 ，节前6磅
+\setlength{\cftbeforesecskip}{6pt}  
+%             %章节间隔 ，节前6磅
+
+\setlength{\cftbeforechapskip}{6pt}
+\setlength{\cftbeforesubsecskip}{6pt}
+
 \renewcommand\cftchapfont{\zihao{4}\bfseries\songti}  % 目录中一级标题，应该是加粗（宋体加粗）
 \renewcommand\cftsecfont{\zihao{4} \songti}
 \renewcommand\cftsubsecfont{\zihao{-4} \songti}
@@ -258,7 +266,7 @@
     \cleardoublepage
     \thispagestyle{empty}
     \begin{center}
-        \includegraphics[width=6.27cm]{lzu.png}\\
+        \includegraphics[width=6cm]{lzu2020.png}\\
         \vspace*{21.8pt}
 
         {\zihao{1}\heiti{本科生毕业论文（设计）\\}}% 封面这几个字，应该是雅黑
